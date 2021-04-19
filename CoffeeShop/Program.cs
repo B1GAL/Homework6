@@ -21,9 +21,9 @@ namespace CoffeeShop
                 answer = Console.ReadLine();
                 orderHistory.Add(answer);
 
-                double price = CalculatePrice(answer);
-                total += price;
+                double price = CalculatePrice(answer);  
                 ShowReceipt(price);
+                total += price;
 
                 Console.WriteLine("Would you like to order anything else? Yes or No");
                 answer = Console.ReadLine();
@@ -43,11 +43,11 @@ namespace CoffeeShop
                 }
                 else
                 {
-                    Console.Write("," + item);
+                    Console.Write(", " + item);
                 }
                 Console.WriteLine();
                 Console.WriteLine($"That is a whopping {total.ToString("C")}'s worth of drinks!!");
-
+                Console.WriteLine(" \n Thanks for playing!");
 
             }
 
@@ -56,33 +56,33 @@ namespace CoffeeShop
 
         static string GetMenu()
         {
-            string msg = "    Coffee Shop Menu   " +
-                         " Fresh Coffee------ $2.25 "   +
-                         " Café au lait------ $3.72 "   +
-                         " Latte------ $4.03 "          +
-                         " Hot Chocolate ------ $3.51 " +
-                         " Pumpkin Spice ------ $7.30 ";
+            string msg = "    Coffee Shop Menu:   " +
+                         " \n Fresh Coffee ------ $2.25 "   +
+                         " \n Café au lait ------ $3.72 "   +
+                         " \n Latte ------ $4.03 "          +
+                         " \n Hot Chocolate ------ $3.51 " +
+                         " \n Pumpkin Spice ------ $7.30 ";
             return msg;
         }               
 
         static double CalculatePrice(string item)
         {
             double result;
-            switch (item.ToUpper())
+            switch (item.ToLower())
             {
-              case  "Fresh Coffee":
+                case "Fresh Coffee":
                 result = 2.25;
                 break;
-              case  "Café au lait":
+                case  "Café au lait":
                 result = 3.72;
                 break;
-              case  "Latte":
+                case  "Latte":
                 result = 4.03;
                 break;
-              case "Hot Chocolate":
+                case "Hot Chocolate":
                 result = 3.51;
                 break;
-              case "Pumpkin Spice":
+                case "Pumpkin Spice":
                 result = 7.30;
                     break;
                 default:
