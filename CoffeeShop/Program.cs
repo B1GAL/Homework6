@@ -56,13 +56,17 @@ namespace CoffeeShop
 
         }
 
-        static void ShowReceipt(double totalPrice)
+        static void ShowReceipt(double subTotal)
         {
-            double result;
-            switch (totalPrice)
-            {
+            double tax = subTotal * TAX_RATE;
+            double total = subTotal + tax;
+            Console.Write($"Subtotal for your item(s) is {subTotal.ToString("C")} ");
+            Console.WriteLine();
+            Console.Write($"Tax for your item(s) is {tax.ToString("C")} ");
+            Console.WriteLine();
+            Console.Write($"Total for your item(s) is {total.ToString("C")} ");
+            Console.WriteLine();
 
-            }
         }
 
 
