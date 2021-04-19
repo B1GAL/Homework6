@@ -9,5 +9,46 @@ namespace CoffeeShop
             
         }
 
+
+        static string GetMenu()
+        {
+            string msg = "    Coffee Shop Menu   " +
+                         " Fresh Coffee------ $2.25 "   +
+                         " Café au lait------ $3.72 "   +
+                         " Latte------ $4.03 "          +
+                         " Hot Chocolate ------ $3.51 " +
+                         " Pumpkin Spice ------ $7.30 ";
+            return msg;
+        }               
+
+        static double CalculatePrice(string item)
+        {
+            double result;
+            switch (item.ToUpper())
+            {
+              case  "Fresh Coffee":
+                result = 2.25;
+                break;
+              case  "Café au lait":
+                result = 3.72;
+                break;
+              case  "Latte":
+                result = 4.03;
+                break;
+              case "Hot Chocolate":
+                result = 3.51;
+                break;
+              case "Pumpkin Spice":
+                result = 7.30;
+                    break;
+                default:
+                    result = 0;
+                    break;
+            }
+
+
+
+        }
+
     }
 }
