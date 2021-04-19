@@ -5,7 +5,7 @@ namespace CoffeeShop
 {
     class Program
     {
-        const double TAX_RATE = 0.085; //8.5% babyyyy HUHHUUUHUHUHUHUHUHUHUHUHUHUUUHUHUHUUUHUHUHUUHUHUHUHUHUHUHUHU uhuhuhuhuhuhuhuhuuhuhuhuhuhuh YEYEYEEYYEEYEYEYEYEYEY
+        const double TAX_RATE = 0.085; //HUHHUUUHUHUHUHUHUHUHUHUHUHUUUHUHUHUUUHUHUHUUHUHUHUHUHUHUHUHU uhuhuhuhuhuhuhuhuuhuhuhuhuhuh YEYEYEEYYEEYEYEYEYEYEY
         static void Main(string[] args)
         {
             List<string> orderHistory = new List<string>();
@@ -17,13 +17,14 @@ namespace CoffeeShop
                 string menu = GetMenu();
                 Console.WriteLine(menu);
 
-                Console.WriteLine("What would you like to order?");
+                Console.WriteLine("What would you like to order?"); //enter everything as seen on the menu, capital letters and all please! :)
                 answer = Console.ReadLine();
                 orderHistory.Add(answer);
 
-                double price = CalculatePrice(answer);  
-                ShowReceipt(price);
+                double price = CalculatePrice(answer);
                 total += price;
+                ShowReceipt(price);
+                
 
                 Console.WriteLine("Would you like to order anything else? Yes or No");
                 answer = Console.ReadLine();
@@ -56,7 +57,7 @@ namespace CoffeeShop
 
         static string GetMenu()
         {
-            string msg = "    Coffee Shop Menu:   " +
+            string msg = "      Coffee Shop Menu:   " +
                          " \n Fresh Coffee ------ $2.25 "   +
                          " \n Café au lait ------ $3.72 "   +
                          " \n Latte ------ $4.03 "          +
@@ -68,7 +69,7 @@ namespace CoffeeShop
         static double CalculatePrice(string item)
         {
             double result;
-            switch (item.ToLower())
+            switch (item)
             {
                 case "Fresh Coffee":
                 result = 2.25;
