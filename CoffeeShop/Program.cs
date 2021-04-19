@@ -4,6 +4,7 @@ namespace CoffeeShop
 {
     class Program
     {
+        const double TAX_RATE = 0.085; //8.5% babyyyy HUHHUUUHUHUHUHUHUHUHUHUHUHUUUHUHUHUUUHUHUHUUHUHUHUHUHUHUHUHU uhuhuhuhuhuhuhuhuuhuhuhuhuhuh YEYEYEEYYEEYEYEYEYEYEY
         static void Main(string[] args)
         {
             
@@ -45,10 +46,30 @@ namespace CoffeeShop
                     result = 0;
                     break;
             }
+            return result;
+
+            
+
+
 
 
 
         }
+
+        static void ShowReceipt(double totalPrice)
+        {
+            double result;
+            switch (totalPrice)
+            {
+
+            }
+        }
+
+
+
+
+
+
 
     }
 }
