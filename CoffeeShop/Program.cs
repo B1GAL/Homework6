@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace CoffeeShop
 {
@@ -7,7 +8,49 @@ namespace CoffeeShop
         const double TAX_RATE = 0.085; //8.5% babyyyy HUHHUUUHUHUHUHUHUHUHUHUHUHUUUHUHUHUUUHUHUHUUHUHUHUHUHUHUHUHU uhuhuhuhuhuhuhuhuuhuhuhuhuhuh YEYEYEEYYEEYEYEYEYEYEY
         static void Main(string[] args)
         {
+            List<string> orderHistory = new List<string>();
+            double total = 0;
+
+            string answer;
+            do
+            {
+                string menu = GetMenu();
+                Console.WriteLine(menu);
+
+                Console.WriteLine("What would you like to order?");
+                answer = Console.ReadLine();
+                orderHistory.Add(answer);
+
+                double price = CalculatePrice(answer);
+                total += price;
+                ShowReceipt(price);
+
+                Console.WriteLine("Would you like to order anything else? Yes or No");
+                answer = Console.ReadLine();
+
+            } while (answer.ToLower() == "yes");
             
+            Console.WriteLine("/n You Ordered");
+
+            bool isFirstTime = true;
+
+            foreach (string item in orderHistory)
+            {
+                if (isFirstTime)
+                {
+                    Console.Write(item);
+                    isFirstTime = false;
+                }
+                else
+                {
+                    Console.Write("," + item);
+                }
+                Console.WriteLine();
+                Console.WriteLine($"That is a whopping {total.ToString("C")}'s worth of drinks!!");
+
+
+            }
+
         }
 
 
@@ -47,12 +90,6 @@ namespace CoffeeShop
                     break;
             }
             return result;
-
-            
-
-
-
-
 
         }
 
